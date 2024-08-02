@@ -141,9 +141,8 @@ const Home = () => {
                                         color: "red",
                                     }}
                                 >
-                                    {/* {product.likedby.includes(
-                                        user?.username
-                                    ) ? (
+                                    {user?.username &&
+                                    product.likedby.includes(user.username) ? (
                                         <AiFillHeart
                                             size={24}
                                             style={{ cursor: "pointer" }}
@@ -153,7 +152,7 @@ const Home = () => {
                                             size={24}
                                             style={{ cursor: "pointer" }}
                                         />
-                                    )} */}
+                                    )}
                                 </button>
                                 <Meta
                                     title={product.product_name}
