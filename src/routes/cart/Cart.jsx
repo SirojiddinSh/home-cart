@@ -19,7 +19,7 @@ const Cart = () => {
         try {
             const response = await axios.patch(
                 `/product/${product._id}/${
-                    product.likedby.includes(user.username) ? "unlike" : "like"
+                    product.likedby.includes(user?.username) ? "unlike" : "like"
                 }`
             );
             if (response.status === 202) {
@@ -47,7 +47,7 @@ const Cart = () => {
                     padding: "50px",
                 }}
             >
-                {!cartProducts.length > 0 && <h1>Cart is empty</h1>}
+                {cartProducts.length > 0 && <h1>Cart is empty</h1>}
                 {cartProducts &&
                     cartProducts?.map((product) => (
                         <Card
@@ -93,7 +93,7 @@ const Cart = () => {
                                     color: "red",
                                 }}
                             >
-                                {product.likedby.includes(user.username) ? (
+                                {product.likedby.includes(user?.username) ? (
                                     <AiFillHeart
                                         size={24}
                                         style={{ cursor: "pointer" }}

@@ -11,7 +11,6 @@ const Product = () => {
     }
 
     const addToCart = (product) => {
-        console.log(product);
         dispatch({ type: "ADD_TO_CARTH", payload: product });
     };
 
