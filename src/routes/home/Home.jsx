@@ -25,7 +25,7 @@ const Home = () => {
         try {
             const response = await axios.patch(
                 `/product/${product._id}/${
-                    product.likedby.includes(user.username) ? "unlike" : "like"
+                    product.likedby.includes(user?.username) ? "unlike" : "like"
                 }`
             );
             if (response.status === 202) {
