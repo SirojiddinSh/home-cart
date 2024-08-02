@@ -5,7 +5,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import React from "react";
 import useFetch from "../../hooks/useFetch";
 import { Loading } from "../../utils/index";
-import { Card, Carousel } from "antd";
+import { Card, Carousel, Button } from "antd";
 import { useSelector } from "react-redux";
 import axios from "../../api";
 import { useDispatch } from "react-redux";
@@ -45,37 +45,47 @@ const Home = () => {
         <div>
             <div
                 style={{
-                    position: "relative",
-                    marginLeft: "95%",
-                    marginTop: "30px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    padding: "20px",
                 }}
             >
-                <AiOutlineShoppingCart
+                <Button onClick={() => navigate("/dashboard")} type="primary">
+                    Dashboard
+                </Button>
+                <div
                     style={{
-                        fontSize: "30px",
-                        cursor: "pointer",
-                    }}
-                    onClick={() => navigate("/cart")}
-                />
-                <span
-                    style={{
-                        position: "absolute",
-                        width: "20px",
-                        height: "20px",
-                        fontSize: "18px",
-                        fontFamily: "sans-serif",
-                        background: "red",
-                        color: "white",
-                        borderRadius: "50%",
-                        display: "flex",
-                        justifyContent: "center",
-                        alignItems: "center",
-                        top: "-5px",
-                        left: "16px",
+                        position: "relative",
+                        width: "100px",
                     }}
                 >
-                    {length}
-                </span>
+                    <AiOutlineShoppingCart
+                        style={{
+                            fontSize: "30px",
+                            cursor: "pointer",
+                        }}
+                        onClick={() => navigate("/cart")}
+                    />
+                    <span
+                        style={{
+                            position: "absolute",
+                            width: "20px",
+                            height: "20px",
+                            fontSize: "18px",
+                            fontFamily: "sans-serif",
+                            background: "red",
+                            color: "white",
+                            borderRadius: "50%",
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            top: "-5px",
+                            left: "16px",
+                        }}
+                    >
+                        {length}
+                    </span>
+                </div>
             </div>
             {isLoading ? (
                 <Loading />

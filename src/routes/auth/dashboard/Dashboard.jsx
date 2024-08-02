@@ -5,6 +5,7 @@ import {
     ProductOutlined,
     ShoppingCartOutlined,
     UserOutlined,
+    HomeOutlined,
 } from "@ant-design/icons";
 import { Button, Layout, Menu, Input, Avatar } from "antd";
 import { useNavigate, NavLink, Outlet } from "react-router-dom";
@@ -80,9 +81,21 @@ const Dashboard = () => {
                         },
                     ]}
                 />
+                <Button
+                    onClick={() => navigate("/")}
+                    type="primary"
+                    style={{
+                        width: "100%",
+                        backgroundColor: "lightgreen",
+                        color: "black",
+                        marginTop: "20px",
+                    }}
+                >
+                    Home
+                </Button>
                 <div
                     style={{
-                        height: "84%",
+                        height: "80%",
                         padding: "10px",
                         paddingBottom: "20px",
                         flex: 1,
