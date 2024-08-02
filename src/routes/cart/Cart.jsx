@@ -47,7 +47,7 @@ const Cart = () => {
                     padding: "50px",
                 }}
             >
-                {cartProducts.length > 0 && <h1>Cart is empty</h1>}
+                {!cartProducts.length > 0 && <h1>Cart is empty</h1>}
                 {cartProducts &&
                     cartProducts?.map((product) => (
                         <Card
