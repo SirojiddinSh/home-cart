@@ -141,7 +141,9 @@ const Home = () => {
                                         color: "red",
                                     }}
                                 >
-                                    {product.likedby.includes(user.username) ? (
+                                    {product.likedby.includes(
+                                        user?.username
+                                    ) ? (
                                         <AiFillHeart
                                             size={24}
                                             style={{ cursor: "pointer" }}
